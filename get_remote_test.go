@@ -13,8 +13,8 @@ func TestGetGitRemote(t *testing.T) {
 	os.Setenv("GITHUB_REPOSITORY", "outillage/integrations")
 	gitRemote = GetGitRemote()
 
-	assert.Equal(t, "github.com", gitRemote.Host)
-	assert.Equal(t, "outillage/integrations", gitRemote.Project)
+	assert.Equal(t, "github.com", gitRemote.Host())
+	assert.Equal(t, "outillage/integrations", gitRemote.Project())
 
 	os.Clearenv()
 
@@ -22,6 +22,6 @@ func TestGetGitRemote(t *testing.T) {
 	os.Setenv("CI_PROJECT_PATH", "outillage/integrations")
 	gitRemote = GetGitRemote()
 
-	assert.Equal(t, "gitlab.com", gitRemote.Host)
-	assert.Equal(t, "outillage/integrations", gitRemote.Project)
+	assert.Equal(t, "gitlab.com", gitRemote.Host())
+	assert.Equal(t, "outillage/integrations", gitRemote.Project())
 }
