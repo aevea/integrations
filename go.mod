@@ -1,4 +1,4 @@
-module github.com/outillage/integrations
+module github.com/aevea/integrations
 
 go 1.13
 
